@@ -4,6 +4,7 @@
   imports = [
     ./zsh.nix
     ./apps.nix
+    ./modules/matugen.nix
   ];
   home.username = "gabzu";
   home.homeDirectory = "/home/gabzu";
@@ -14,13 +15,6 @@
     settings = {
       shell = "zsh";
     };
-  };
-  home.packages = [ pkgs.bibata-cursors ];
-  home.pointerCursor = {
-    gtk.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Ice";
-    size = 24;
   };
   programs.bash = {
     enable = false;
@@ -36,5 +30,4 @@
   home.file.".config/hypr".source = ./config/hypr;
   home.file.".config/fastfetch".source = ./config/fastfetch;
   home.file.".config/kitty".source = ./config/kitty;
-  # home.file.".config/wal".source = ./config/wal;
 }

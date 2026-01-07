@@ -11,7 +11,6 @@
     wget
     xfce.thunar
     yazi
-    pywal
 
     # --- Editors & IDEs ---
     vim
