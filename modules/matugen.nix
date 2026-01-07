@@ -18,5 +18,9 @@
   [templates.vencord]
   input_path = '${../templates/vencord.css}'
   output_path = '~/.config/vesktop/themes/matugen.css'
+
+  [templates.spicetify]
+  input_path = '${../templates/spicetify.ini}'
+  output_path = '~/.config/spicetify/Themes/Comfy/color.ini'
 '';
 }

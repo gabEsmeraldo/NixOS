@@ -13,14 +13,28 @@
         exec hyprland
       fi
     '';
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     
     # Powerlevel10k instant prompt logic [cite: 1, 3, 4]
-    initExtraFirst = ''
+    initContent = ''
       if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
         source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
       fi
+      # Suggest corrections for typos
+      setopt CORRECT
+      # Make cd push old directory onto stack
+      setopt AUTO_PUSHD
+      # Don't push duplicates
+      setopt PUSHD_IGNORE_DUPS
+      # Don't find duplicates in history
+      setopt HIST_FIND_NO_DUPS
+
+      # Powerlevel10k configuration 
+      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+      
+      # Zoxide initialization
+      # eval "$(zoxide init zsh)"
     '';
 
     # History settings
@@ -98,21 +112,21 @@
     };
 
     # Additional initialization 
-    initExtra = ''
-      # Suggest corrections for typos
-      setopt CORRECT
-      # Make cd push old directory onto stack
-      setopt AUTO_PUSHD
-      # Don't push duplicates
-      setopt PUSHD_IGNORE_DUPS
-      # Don't find duplicates in history
-      setopt HIST_FIND_NO_DUPS
+  #   initContent = ''
+  #     # Suggest corrections for typos
+  #     setopt CORRECT
+  #     # Make cd push old directory onto stack
+  #     setopt AUTO_PUSHD
+  #     # Don't push duplicates
+  #     setopt PUSHD_IGNORE_DUPS
+  #     # Don't find duplicates in history
+  #     setopt HIST_FIND_NO_DUPS
 
-      # Powerlevel10k configuration 
-      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+  #     # Powerlevel10k configuration 
+  #     [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
       
-      # Zoxide initialization
-      # eval "$(zoxide init zsh)"
-    '';
+  #     # Zoxide initialization
+  #     # eval "$(zoxide init zsh)"
+  #   '';
   };
 }

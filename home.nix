@@ -5,6 +5,7 @@
     ./zsh.nix
     ./apps.nix
     ./modules/matugen.nix
+    ./modules/spicetify.nix
   ];
   home.username = "gabzu";
   home.homeDirectory = "/home/gabzu";

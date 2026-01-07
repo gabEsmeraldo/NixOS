@@ -15,7 +15,7 @@
   home-manager.useUserPackages = true;
   home-manager.backupFileExtension = "backup";
   home-manager.users.gabzu = {
-  nixpkgs.config.allowUnfree = true; 
+    nixpkgs.config.allowUnfree = true; 
     imports = [ ./home.nix ];
   };
 
@@ -120,8 +120,6 @@
     flatpak
   ];
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -31,7 +31,7 @@
     # --- Communication & Social ---
     discord
     vesktop
-    spotify
+    # spotify
     anytype
 
     # Life
