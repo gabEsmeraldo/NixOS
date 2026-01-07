@@ -7,14 +7,13 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    matugen.url = "github:InioX/matugen";
   };
-
-  # Added @ inputs here
+  
   outputs = { self, nixpkgs, home-manager, ... } @ inputs: {
     nixosConfigurations.asphodelus = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       
-      # Now 'inputs' is defined and can be inherited
       specialArgs = { inherit inputs home-manager; };
       
       modules = [
@@ -23,7 +22,10 @@
         {
           # home-manager.useGlobalPackages = true;
           home-manager.useUserPackages = true;
-          home-manager.users.gabzu = import ./home.nix;
+          home-manager.extraSpecialArgs = { inherit inputs; };
+          home-manager.users.gabzu = {
+            imports = [ ./home.nix ]; 
+          };
           home-manager.backupFileExtension = "backup";
         }
       ];

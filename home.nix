@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ config, pkgs, inputs, ...}:
 
 {
   imports = [
@@ -29,5 +29,5 @@
   };
   home.file.".config/hypr".source = ./config/hypr;
   home.file.".config/fastfetch".source = ./config/fastfetch;
-  home.file.".config/kitty".source = ./config/kitty;
+  xdg.configFile."kitty/kitty.conf".source = ./config/kitty/kitty.conf;
 }
