@@ -3,12 +3,15 @@
 {
   home.packages = with pkgs; [
     # --- System & Terminal ---
+    hyprshade
     fastfetch
     kitty
     zsh
     git
     wget
     xfce.thunar
+    yazi
+    pywal
 
     # --- Editors & IDEs ---
     vim
@@ -24,11 +27,16 @@
     openjdk21                  # Primary version
     (lib.lowPrio openjdk17)    # Secondary
     (lib.lowPrio openjdk8)     # Legacy
+    texliveTeTeX
 
     # --- Communication & Social ---
     discord
     vesktop
     spotify
     anytype
+
+    # Life
+    libreoffice
+    kdePackages.okular
   ];
 }

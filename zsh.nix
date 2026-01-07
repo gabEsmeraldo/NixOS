@@ -69,7 +69,7 @@
 
       # System shortcuts
       ff = "fastfetch";
-      Syu = "yay --answerclean N --answerdiff N";
+      # Syu = "yay --answerclean N --answerdiff N";
 
       # Navigation
       cd = "z";
