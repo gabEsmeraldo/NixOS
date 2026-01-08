@@ -7,7 +7,7 @@
     fastfetch
     kitty
     zsh
-    git
+    # git
     wget
     xfce.thunar
     yazi

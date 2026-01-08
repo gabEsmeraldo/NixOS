@@ -11,12 +11,25 @@
   home.homeDirectory = "/home/gabzu";
   home.stateVersion = "25.05";
   programs.home-manager.enable = true;
+
   programs.kitty = {
     enable = true;
     settings = {
       shell = "zsh";
     };
   };
+
+  programs.git = {
+    enable = true;
+    userName  = "gabesmeraldo";
+    userEmail = "gabrielcesmeraldo@gmail.com";
+  
+    extraConfig = {
+      credential.helper = "store";
+      init.defaultBranch = "main";
+    };
+  };
+
   programs.bash = {
     enable = false;
     shellAliases = {

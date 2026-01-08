@@ -48,14 +48,6 @@
     xwayland.enable = true;
   };
 
-  programs.git = {
-  enable = true;
-  package = pkgs.gitFull;
-    config = { 
-      credential.helper = "libsecret";
-    };
-  };
-
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
