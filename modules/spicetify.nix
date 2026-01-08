@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, config, ... }:
 let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
 in
@@ -7,10 +7,12 @@ in
 
   programs.spicetify = {
     enable = true;
+    
+    # Define o tema diretamente do pacote oficial
     theme = spicePkgs.themes.comfy;
     
-    # Use um esquema padrão que já existe no Comfy para o build passar
-    colorScheme = "Spotify"; 
+    # Escolhe o esquema de cores padrão do tema (pode ser "Comfy", "Rose Pine", etc)
+    colorScheme = "Velvet"; 
 
     enabledExtensions = with spicePkgs.extensions; [
       adblock
