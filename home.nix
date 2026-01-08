@@ -28,12 +28,6 @@
       fi
     '';
   };
-  programs.git = {
-    extraConfig.credential.helper = "manager";
-    extraConfig.credential."https://github.com".username = "gabesmeraldo";
-    extraConfig.credential.credentialStore = "cache";
-    enable = true;
-  };
   home.file.".config/hypr".source = ./config/hypr;
   home.file.".config/fastfetch".source = ./config/fastfetch;
   xdg.configFile."kitty/kitty.conf".source = ./config/kitty/kitty.conf;
